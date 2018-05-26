@@ -19,4 +19,14 @@ Edit the second line and add your youtube links like so:
         youtube_tool = YTDTool(['youtube_link', 'youtube_link', 'youtube_link'], download=True)
         youtube_tool._playlist_check()
 
-I dont know what you download. So i cant be responsible for that. Keep in mind that downloading music illegal can have consequences. Once again I am not responsible for the data that you download with this software. 
+I dont know what you download. So i cant be responsible for that. Keep in mind that downloading music illegal can have consequences. Once again I am not responsible for the data that you download with this software.
+
+After you added your links you are good to go. Make sure you have all the packages installed with: 
+    
+    python -m pip install -r requirements.txt
+    
+You can start the program by running
+
+    python run.py
+    
+Works for **python 3.6>=**   

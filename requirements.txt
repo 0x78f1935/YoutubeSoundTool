@@ -1,0 +1,10 @@
+aiohttp==3.2.1
+async-timeout==3.0.0
+attrs==18.1.0
+beautifulsoup4==4.6.0
+chardet==3.0.4
+idna==2.6
+idna-ssl==1.0.1
+multidict==4.3.1
+yarl==1.2.4
+youtube-dl==2018.5.26

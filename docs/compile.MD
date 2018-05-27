@@ -1,1 +1,0 @@
-    pyinstaller core.py --clean --onefile --name YoutubeSoundTool --nowindowed --noconsole --distpath .

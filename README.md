@@ -24,3 +24,7 @@ You can start the program by running
 Tested on
 
     Python 3.6.5 (v3.6.5:f59c0932b4, Mar 28 2018, 16:07:46) [MSC v.1900 32 bit (Intel)] on win32
+
+### Screenshots
+
+![Detect playlists](https://raw.githubusercontent.com/Annihilator708/YoutubeSoundTool/development/Screenshots/1.png "Detects playlist, add multiple urls") ![Add multiple urls](https://raw.githubusercontent.com/Annihilator708/YoutubeSoundTool/development/Screenshots/2.png "Download queue")![Download finished](https://raw.githubusercontent.com/Annihilator708/YoutubeSoundTool/development/Screenshots/3.png "Download finished")

@@ -10,6 +10,9 @@ This is a advanced version. The simplistic version can be found [here](https://g
 
 ```Note: I am not responseible for  what you download with this tool. This can be a music video or a prank video. Keep in mind that in some countrys downloading is illigal.``` 
 
+## Run from executable
+For Windows just run `YoutubeSoundTool.exe`
+
 ## Run from script.
 
 If you would like to run directly from the script make sure your environment is setup correctly. 

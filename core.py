@@ -53,6 +53,10 @@ class YoutubeSoundTool(tk.Frame):
         # Define our youtube_dl variable
         self.ytdl = youtube_dl.YoutubeDL(ytdl_format_options)
 
+    def showEnd_output(self):
+        self.text_output.see(tk.END)
+        self.text_output.edit_modified(0)  # IMPORTANT - or <<Modified>> will not be called later.
+
     def body_add_entitie(self):
         # Create label frame
         layout = tk.Frame(master=self.master).grid(row=0, sticky=tk.E)
@@ -77,6 +81,7 @@ class YoutubeSoundTool(tk.Frame):
         # Create label frame
         layout = tk.Frame(master=self.master).grid(row=8, sticky=tk.W)
         self.text_output = tk.Text(layout, bd=1, relief=tk.SUNKEN, height=25)
+        self.text_output.see(tk.END)
         self.text_output.grid(row=8, column=0, sticky=tk.W+tk.E)
 
     def footer_quit_button(self):
@@ -100,6 +105,8 @@ class YoutubeSoundTool(tk.Frame):
         """
         self.text_output.insert(tk.END, "Download started, This can take a minute\n")
         self.text_output.insert(tk.END, "\tDownloading:\n")
+        self.showEnd_output()
+
         for youtube_item in self.songs:
             print(f'Downloading: {youtube_item}')
             self.text_output.insert(tk.END, f"\t\t{youtube_item}\n")
@@ -120,6 +127,7 @@ class YoutubeSoundTool(tk.Frame):
               f"\tThe following files have been downloaded:\n\n"
         self.text_output.insert(tk.END, fmt)
         self.text_output.insert(tk.END, downloaded_files)
+        self.showEnd_output()
 
         self.change_status('Finished downloading')
         # Lock entry while downloading
@@ -151,6 +159,7 @@ class YoutubeSoundTool(tk.Frame):
 
     def _strip_playlist(self, url:str):
         self.text_output.insert(tk.END, "Playlist detected, Stripping links..\n")
+        self.showEnd_output()
         # Make a list of all youtube links in the playlist
         final_urls = []  # results
         # Gather info about the search
@@ -175,7 +184,8 @@ class YoutubeSoundTool(tk.Frame):
         # Notfiy user
         self.text_output.insert(tk.END, "\tLinks found:\n")
         self.text_output.insert(tk.END, '\n'.join([f'\t\t- {x[:55]}' for x in final_urls]))
-        self.text_output.insert(tk.END, "\n\nReady for download, or add another link..")
+        self.text_output.insert(tk.END, "\n\nReady for download, or add another link..\n\n")
+        self.showEnd_output()
 
         self.entitie_total_vids["text"] = f'Videos to download: {len(self.songs)}'
 
@@ -217,6 +227,12 @@ class YoutubeSoundTool(tk.Frame):
                 self.songs.append(url)
                 self.entitie_total_urls["text"] = f'Urls to process: {len(self.urls)}'
                 self.entitie_total_vids["text"] = f'Videos to download: {len(self.songs)}'
+                self.text_output.insert(tk.END, "Single video detected, Stripping link..\n")
+                # Notfiy user
+                self.text_output.insert(tk.END, "\tLink found:\n")
+                self.text_output.insert(tk.END, f'\n\t\t- {url[:55]}')
+                self.text_output.insert(tk.END, "\n\nReady for download, or add another link..\n\n")
+                self.showEnd_output()
 
         else:
             # If the url not starts with youtube, do nothing

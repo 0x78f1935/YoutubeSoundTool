@@ -94,6 +94,7 @@ class YTDTool(object):
     def _download(self):
         '''download urls from the url list'''
         for youtube_item in self.songs:
+            self.logger.info(f'Downloading: {youtube_item}')
             data = self.ytdl.extract_info(youtube_item, download=True)
             self.logger.debug(data)
 
@@ -167,5 +168,5 @@ class YTDTool(object):
         self.logger.debug('ENDED _strip_playlist\n' + str('='*25)+ '\n\n')
 
 if __name__ == '__main__':
-    youtube_tool = YTDTool(['YOUTUBE URL HERE', 'YOU ALSO CAN USE YOUTUBE PLAYLIST INSTEAD', 'MAYBE YET ANOTHER YOUTUBE VIDEO'], download=True)
+    youtube_tool = YTDTool(['https://www.youtube.com/watch?v=xzHJ2aZR6e4&start_radio=1&list=RDGMEMHDXYb1_DDSgDsobPsOFxpAVMxzHJ2aZR6e4'], download=True)
     youtube_tool._playlist_check()

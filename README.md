@@ -19,7 +19,7 @@ Install all packages needed in order to make this work. Expected that you have p
     
 You can start the program by running
 
-    python run.py
+    python core.py
     
 Tested on
 

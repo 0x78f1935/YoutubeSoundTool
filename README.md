@@ -6,22 +6,15 @@ You can enter any youtube link. There is just one condition.
 
 "The youtube link needs to contain the keyword 'watch' "
 
-This is a simplistic version / idea that is growing its roots in to the ground aka **POC**.
-Open up "run.py" and scroll down until you see somthing like this:
+This is a advanced version. The simplistic version can be found [here](https://github.com/Annihilator708/YoutubeSoundTool/tree/poc).
 
-    if __name__ == '__main__':
-        youtube_tool = YTDTool(['YOUTUBE URL HERE', 'YOU ALSO CAN USE YOUTUBE PLAYLIST INSTEAD', 'MAYBE YET ANOTHER YOUTUBE VIDEO'], download=True)
-        youtube_tool._playlist_check()
+```Note: I am not responseible for  what you download with this tool. This can be a music video or a prank video. Keep in mind that in some countrys downloading is illigal.``` 
 
-Edit the second line and add your youtube links like so:
+## Run from script.
 
-    if __name__ == '__main__':
-        youtube_tool = YTDTool(['youtube_link', 'youtube_link', 'youtube_link'], download=True)
-        youtube_tool._playlist_check()
+If you would like to run directly from the script make sure your environment is setup correctly. 
+Install all packages needed in order to make this work. Expected that you have python installed and know what you are doing. 
 
-I dont know what you download. So i cant be responsible for that. Keep in mind that downloading music illegal can have consequences. Once again I am not responsible for the data that you download with this software.
-
-After you added your links you are good to go. Make sure you have all the packages installed with: 
     
     python -m pip install -r requirements.txt
     
@@ -29,4 +22,6 @@ You can start the program by running
 
     python run.py
     
-Works for **python 3.6>=**   
+Tested on
+
+    Python 3.6.5 (v3.6.5:f59c0932b4, Mar 28 2018, 16:07:46) [MSC v.1900 32 bit (Intel)] on win32

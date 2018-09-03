@@ -39,7 +39,7 @@ class YoutubeSoundTool(tk.Frame):
             'cachedir': 'False',
             'ignoreerrors': 'True',
             'verbose': 'False',
-            'outtmpl': 'downloads/%(title)s.%(ext)s',
+            'outtmpl': 'downloads/%(title)s.mp3', #%(ext)s
             'nocheckcertificate': 'True',
             'noplaylist': 'True'
         }
@@ -97,7 +97,7 @@ class YoutubeSoundTool(tk.Frame):
         self.status.grid(row=7, column=0, sticky=tk.W+tk.E)
 
         # Add version number
-        tk.Label(layout, text='| v1.0.0').grid(row=6, column=1, sticky=tk.W)
+        tk.Label(layout, text='| v1.0.1').grid(row=6, column=1, sticky=tk.W)
 
     def _download(self):
         """
